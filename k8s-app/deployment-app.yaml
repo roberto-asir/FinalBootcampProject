@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: quiz-app
+  name: quiz-app
+  namespace: practica
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quiz-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: quiz-app
+    spec:
+      containers:
+      - image: carlosfeufernandez/app-quiz-pf
+        name: app-quiz-pf
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      initContainers:
+        - name: check-db
+          image: busybox:1.28
+          command: ['sh', '-c', "ping quiz-app-db" ]
+status: {}

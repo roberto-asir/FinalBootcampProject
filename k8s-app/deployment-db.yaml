@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: quiz-app-db
+  name: quiz-app-db
+  namespace: practica
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quiz-app-db
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: quiz-app-db
+    spec:
+      containers:
+      - image: mongo:6.0.3
+        name: mongo
+        resources:
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 27017
+status: {}
