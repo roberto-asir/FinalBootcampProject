@@ -22,9 +22,15 @@ spec:
         resources:
           limits:
             memory: "128Mi"
-            cpu: "500m"
+            cpu: "200m"
+        env:
+        - name: MONGODB_URI 
+          valueFrom:
+            secretKeyRef:
+              name: secret-db
+              key: MONGODB_URI
       initContainers:
         - name: check-db
           image: busybox:1.28
-          command: ['sh', '-c', "ping quiz-app-db" ]
+          command: ['sh', '-c', "until nc -zv quiz-app-service 27017; do sleep 5; done" ]
 status: {}
