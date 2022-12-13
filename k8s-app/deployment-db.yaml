@@ -6,6 +6,15 @@ metadata:
   name: quiz-app-db
   namespace: practica
 spec:
+  volumeClaimTemplates:
+  - metadata:
+      name: db
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: sv-pv
+      resources:
+        requests:
+          storage: 1Gi
   serviceName: "quiz-app-service"
   replicas: 1
   selector:
@@ -18,11 +27,14 @@ spec:
     spec:
       containers:
       - image: mongo:6.0.3
+        volumeMounts:
+        - mountPath: /data/db
+          name: db
         name: mongo
         resources:
           limits:
-            memory: "512Mi"
-            cpu: "500m"
+            memory: "256Mi"
+            cpu: "200m"
         ports:
         - containerPort: 27017
         env:
