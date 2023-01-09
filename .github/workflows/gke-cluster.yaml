@@ -1,0 +1,98 @@
+name: "GKE cluster"
+
+on:
+  push:
+    paths:
+    - 'terraform-provision-gke-cluster/**'
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  terraform:
+    # env:
+    #     GOOGLE_CREDENTIALS: ${{ secrets.GCP_SECRET }}
+    name: "Terraform"
+    runs-on: ubuntu-latest
+    # strategy:
+    #   matrix:
+    #     working-directory: [terraform-provision-gke-cluster]
+    defaults:
+      run:
+        working-directory: terraform-provision-gke-cluster
+
+    steps:
+      - id: 'auth'
+        name: Autentificación Gcloud
+        uses: 'google-github-actions/auth@v1'
+        with:
+          workload_identity_provider: 'projects/716195497641/locations/global/workloadIdentityPools/proyecto-final/*'
+          service_account: 'practica-carlos-sv@cosmic-tensor-371107.iam.gserviceaccount.com'
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Terraform Format
+        id: fmt
+        run: terraform fmt -check
+
+      - name: Terraform Init
+        id: init
+        run: terraform init
+
+      - name: Terraform Plan
+        id: plan
+        if: github.event_name == 'push'
+        run: terraform plan -no-color
+        continue-on-error: true
+
+      - name: Terraform Plan Status
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
+
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve
+
+  bootstrap:
+    name: bootstrap-cluster
+    runs-on: ubuntu-latest
+    needs: terraform
+    steps:
+      # - id: get-credentials
+      #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #   uses: google-github-actions/get-gke-credentials@main
+      #   with:
+      #     cluster_name: ${{ secrets.GKE_CLUSTER_NAME }}
+      #     location: us-central1
+      #     credentials: ${{ secrets.GCP_SECRET }}
+
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          workload_identity_provider: 'projects/716195497641/locations/global/workloadIdentityPools/proyecto-final/*'
+          service_account: 'practica-carlos-sv@cosmic-tensor-371107.iam.gserviceaccount.com'
+
+      - id: 'get-credentials'
+        uses: 'google-github-actions/get-gke-credentials@v1'
+        with:
+          cluster_name: ${{ secrets.GKE_CLUSTER_NAME }}
+          location: 'us-central1'
+
+      - id: get-pods
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: kubectl get pods -A
+
+      # - id: install-flagger
+      #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      #   run: |
+      #     helm repo add flagger https://flagger.app
+      #     helm install my-flagger flagger/flagger --version 1.4.2
+      # - id: install-istio-operator
+      #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      #   run: |
+      #     helm repo add stevehipwell https://stevehipwell.github.io/helm-charts/
+      #     helm install my-istio-operator stevehipwell/istio-operator --version 1.2.2
+      # - id: get-pods-after-bootstrap
+      #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      #   run: kubectl get pods -A
