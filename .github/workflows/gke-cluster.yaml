@@ -34,6 +34,9 @@ jobs:
         with:
           workload_identity_provider: 'projects/716195497641/locations/global/workloadIdentityPools/proyecto-final/*'
           service_account: 'practica-carlos-sv@cosmic-tensor-371107.iam.gserviceaccount.com'
+      
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
 
       - name: Terraform Format
         id: fmt
