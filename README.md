@@ -9,6 +9,11 @@ En estos momentos está hecho:
 - Script en bash que despliega los manifiestos con kubectl
 - terraform que crea bucket para almacenar el estado remoto de Terraform
 - Terraform que crea el cluster en GKE
+- CICD
+  - Se construye una imagen docker y se sube al repositorio de de docker hub y a se añade como package en github.
+  - Versioning de la aplicacion
+  - Se actualiza la imagen desplegada en kubernetes
+  
 
 
 Observaciones:
@@ -17,9 +22,7 @@ Observaciones:
 
 
 Pendiente:
-- CICD que:
-  - construya la imagen de docker y la sube a dockerhub o al repositorio de GKE cuando se hagan cambios en la app
-  - que actualice la imagen de la aplicación desplegada en kubernetes
+
 
 - Monitorización:
   - Empezando con algo básico, ya habrá tiempo de ampliarlo
