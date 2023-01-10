@@ -6,7 +6,7 @@ PIP		= $(VENV)/bin/pip
 IMAGE_REGISTRY_DOCKERHUB 	?= carlosfeufernandez
 IMAGE_REGISTRY	?= ghcr.io
 IMAGE_REPO		= keepcodingclouddevops6
-IMAGE_NAME		?= Silicon-Valley-Proyecto-Final
+IMAGE_NAME		?= silicon-valley-proyecto-final
 VERSION			?= develop
 
 # Variables used to configure docker images registries to build and push
