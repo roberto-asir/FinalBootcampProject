@@ -36,7 +36,7 @@ jobs:
           service_account: 'practica-carlos-sv@cosmic-tensor-371107.iam.gserviceaccount.com'
       
       - name: Setup Terraform
-        uses: hashicorp/terraform-github-actions@master
+        uses: hashicorp/setup-terraform@v1
 
       - name: Terraform Format
         id: fmt
