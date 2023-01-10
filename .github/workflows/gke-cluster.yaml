@@ -32,7 +32,7 @@ jobs:
         name: Autentificación Gcloud
         uses: 'google-github-actions/auth@v1'
         with:
-          workload_identity_provider: '//iam.googleapis.com/projects/716195497641/locations/global/workloadIdentityPools/proyecto-final/providers/proyectofinal'
+          workload_identity_provider: '//iam.googleapis.com/projects/716195497641/locations/global/workloadIdentityPools/proyecto-final/providers/*'
           service_account: 'practica-carlos-sv@cosmic-tensor-371107.iam.gserviceaccount.com'
       
       - name: Setup Terraform
