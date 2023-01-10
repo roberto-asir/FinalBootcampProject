@@ -41,6 +41,9 @@ jobs:
       - name: Terraform Format
         id: fmt
         run: terraform fmt
+        
+      - name: Terraform version
+        run: terraform version
 
       - name: Terraform Init
         id: init
