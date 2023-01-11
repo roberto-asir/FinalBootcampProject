@@ -16,8 +16,29 @@ spec:
       labels:
         app: quiz-app
     spec:
+      affinity:
+        podAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app: quiz-app-db
+                namespaces:
+                  - "practica"
+                topologyKey: kubernetes.io/hostname
+              weight: 1
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app: quiz-app
+                namespaces:
+                  - "practica"
+                topologyKey: kubernetes.io/hostname
+              weight: 1
       containers:
-      - image: carlosfeufernandez/app-quiz-pf
+      - image: carlosfeufernandez/app-quiz-pf:latest
         name: app-quiz-pf
         ports:
           - containerPort: 5000
@@ -31,6 +52,19 @@ spec:
             secretKeyRef:
               name: secret-db
               key: MONGODB_URI
+        livenessProbe:
+          httpGet:
+            path: /auth/register
+            port: 5000
+          failureThreshold: 1
+          periodSeconds: 10
+          initialDelaySeconds: 25
+        readinessProbe:
+          httpGet:
+            path: /auth/register
+            port: 5000
+          initialDelaySeconds: 15
+          periodSeconds: 5
       initContainers:
         - name: check-db
           image: busybox:1.28
