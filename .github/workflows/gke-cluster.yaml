@@ -93,6 +93,12 @@ jobs:
           cluster_name: ${{ secrets.GKE_CLUSTER_NAME }}
           location: 'us-central1'
 
+      - id: prometheus stack
+        run: |
+          helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+          helm repo update
+          helm -n monitoring upgrade --install prometheus prometheus-community/kube-prometheus-stack -f terraform-provision-gke-cluster/assets/custom_values_prometheus.yaml --create-namespace --wait --version 34.1.1
+
       - id: get-pods
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: kubectl get pods -A
