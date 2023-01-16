@@ -1,0 +1,56 @@
+name: "APP DEPLOY"
+
+on:
+  push:
+    paths:
+    - 'quiz-app-helm/**'
+    branches:
+      - main
+  pull_request:
+
+  bootstrap:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    name: bootstrap-cluster
+    runs-on: ubuntu-latest
+    steps:
+      # - id: get-credentials
+      #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #   uses: google-github-actions/get-gke-credentials@main
+      #   with:
+      #     cluster_name: ${{ secrets.GKE_CLUSTER_NAME }}
+      #     location: us-central1
+      #     credentials: ${{ secrets.GCP_SECRET }}
+      - name: Checkout
+        uses: actions/checkout@v3 
+      
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          workload_identity_provider: 'projects/716195497641/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+          service_account: 'practica-carlos-sv@cosmic-tensor-371107.iam.gserviceaccount.com'
+
+      - id: 'get-credentials'
+        uses: 'google-github-actions/get-gke-credentials@v1'
+        with:
+          cluster_name: ${{ secrets.GKE_CLUSTER_NAME }}
+          location: 'us-central1'
+
+      - id: get-pods
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: kubectl get pods -A
+
+      - id: install-quiz-app
+      #  if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+      #    helm repo add flagger https://flagger.app
+          helm install helm-deploy quiz-app-helm
+      # - id: install-istio-operator
+      #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      #   run: |
+      #     helm repo add stevehipwell https://stevehipwell.github.io/helm-charts/
+      #     helm install my-istio-operator stevehipwell/istio-operator --version 1.2.2
+      # - id: get-pods-after-bootstrap
+      #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      #   run: kubectl get pods -A
