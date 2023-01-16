@@ -8,11 +8,12 @@ on:
       - main
   pull_request:
 
-  bootstrap:
+jobs:
+  app:
     permissions:
       contents: 'read'
       id-token: 'write'
-    name: bootstrap-cluster
+    name: app deploy helm
     runs-on: ubuntu-latest
     steps:
       # - id: get-credentials
