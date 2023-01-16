@@ -43,7 +43,7 @@ on:
 
       - id: install-quiz-app
       #  if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: |
+        run:
       #    helm repo add flagger https://flagger.app
           helm install helm-deploy quiz-app-helm
       # - id: install-istio-operator
