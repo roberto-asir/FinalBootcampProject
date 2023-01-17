@@ -109,7 +109,7 @@ jobs:
           #helm repo update
           #helm install my-release nginx-stable/nginx-ingress
 
-      - id: 
+      - id: cert-manager
         run: |
           helm repo add jetstack https://charts.jetstack.io
           helm repo update
