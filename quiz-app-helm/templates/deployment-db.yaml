@@ -54,8 +54,8 @@ spec:
         name: mongo
         resources:
           limits:
-            memory: "256Mi"
-            cpu: "200m"
+            memory: "512Mi"
+            cpu: "400m"
         ports:
         - containerPort: 27017
         env:
