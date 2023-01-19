@@ -870,3 +870,4 @@ metadata:
   namespace: monitoring
   labels:
     grafana_dashboard: "1"
+    team: sv
