@@ -44,8 +44,8 @@ spec:
           - containerPort: 5000
         resources:
           limits:
-            memory: "256Mi"
-            cpu: "100m"
+            memory: "512Mi"
+            cpu: "200m"
         env:
         - name: MONGODB_URI 
           valueFrom:
