@@ -1,6 +1,7 @@
 ![TF](https://img.shields.io/badge/Supports%20Terraform%20Version-%3E%3D1.3.4-blue.svg) [![Terraform](https://github.com/KeepCodingCloudDevops6/JuanMa-cicd/actions/workflows/terraform.yml/badge.svg)](https://github.com/KeepCodingCloudDevops6/JPractica-Final-Silicon-Valley/actions/workflows/gke-cluster.yaml)
 [![GKE cluster](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/gke-cluster.yaml/badge.svg)](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/gke-cluster.yaml) [![release-build](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/versioning-app.yaml/badge.svg)](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/versioning-app.yaml)
 # Practica-Final-Silicon-Valley
+![keepcoding](https://user-images.githubusercontent.com/107815913/214015974-a306ba44-3ae4-4840-a334-b8e5bcf311fd.png)
 
 # Ponentes
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/JuanMaTB)  Juan Manuel Torrado
