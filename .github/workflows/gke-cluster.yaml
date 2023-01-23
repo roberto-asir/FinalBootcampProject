@@ -102,7 +102,7 @@ jobs:
         run: |
           helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
           helm repo update
-          helm upgrade --install quickstart ingress-nginx/ingress-nginx \
+          helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
             --wait
             --version 4.4.2
 
