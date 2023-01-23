@@ -1,7 +1,23 @@
 # Practica-Final-Silicon-Valley 
 [![GKE cluster](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/gke-cluster.yaml/badge.svg)](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/gke-cluster.yaml) [![release-build](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/versioning-app.yaml/badge.svg)](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/versioning-app.yaml)
-
+# Ponentes
+# Agradecimientos
+# Que pretende el proyecto
+# DIAGRAMA
 ![diagrama-silicon-valley drawio](https://user-images.githubusercontent.com/107815913/213915033-d60ccb24-29c9-443a-bb4a-dd94580aa500.png)
+# Indice
+- La app
+- Dockerizacion
+- Kubernetizacion
+- Helmetizado
+- La nube
+  - Infraestructura
+- CI/CD
+- Monitorizacion
+- Conclusiones
+- Aspectos a mejorar
+
+==============================================================================================================================================
 En estos momentos está hecho:
 
 - Dockerización de la app
