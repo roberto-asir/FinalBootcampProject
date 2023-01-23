@@ -21,6 +21,7 @@ Como grupo, nuestro objetivo en el proyecto final del bootcamp de DevOps es demo
 ![diagrama-silicon-valley drawio](https://user-images.githubusercontent.com/107815913/213915033-d60ccb24-29c9-443a-bb4a-dd94580aa500.png)
 # Indice
 - [La aplicación (Local-Deployment)](./quiz-app/quiz-app-Readme.md)
+  - [README de la aplicación (Local-Deployment)](./quiz-app/README.md)
 - Dockerizacion
 - Kubernetizacion
 - Helmetizado
