@@ -21,7 +21,7 @@ A los profesores de Keepcoding, queremos expresar nuestra más sincera gratitud 
 Como grupo, nuestro objetivo en el proyecto final del bootcamp de DevOps es demostrar nuestra capacidad para implementar una infraestructura automatizada y escalable utilizando las tecnologías más recientes y relevantes del mercado. Utilizaremos herramientas como Terraform para automatizar la creación de recursos en la nube, CI/CD con Github Actions para configurar una pipeline de integración y entrega continua, y el stack Grafana con Prometheus para monitorear el rendimiento de la aplicación. Además, desplegaremos una aplicación en un cluster de Kubernetes utilizando Docker y Helm. Con este proyecto, buscamos demostrar nuestras habilidades para construir, monitorear y escalar infraestructura en la nube, lo cual es esencial para cualquier profesional en el campo de DevOps. En resumen, nuestro objetivo es crear una infraestructura automatizada y escalable que sea fácil de monitorear y mantener, y que cumpla con los estándares de alta disponibilidad y seguridad.
 
 # DIAGRAMA
-![diagrama-silicon-valley drawio](https://user-images.githubusercontent.com/107815913/213915033-d60ccb24-29c9-443a-bb4a-dd94580aa500.png)
+![diagrama-silicon-valley drawio2](https://user-images.githubusercontent.com/107815913/214021084-6ba7c3bb-d8bb-43a3-a2e6-7d2895cc9726.png)
 # Indice
 - [La aplicación (Local-Deployment)](./quiz-app/quiz-app-Readme.md)
   - [README de la aplicación (Local-Deployment)](./quiz-app/README.md)
