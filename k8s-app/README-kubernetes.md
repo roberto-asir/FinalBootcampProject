@@ -6,20 +6,21 @@ Hemos decidido usar Kubernetes debido a su capacidad para escalar automáticamen
 
 Los manifiestos de Kubernetes son esenciales para el despliegue automatizado y reproducible de nuestra aplicación. Describen y definen la configuración de los recursos del sistema, como el número de réplicas, los contenedores necesarios, la configuración de volumen, los servicios y las clases de almacenamiento. Estos manifiestos son esenciales para asegurar que nuestra aplicación se despliegue y se ejecute correctamente en un cluster de Kubernetes.
 
-**deployment-app.yaml**: Este archivo contiene la configuración para desplegar la aplicación en un cluster de Kubernetes. Incluye detalles como el número de réplicas, los contenedores necesarios y las configuraciones de volumen.
+[deployment-app.yaml](./deployment-app.yaml): Este archivo contiene la configuración para desplegar la aplicación en un cluster de Kubernetes. Incluye detalles como el número de réplicas, los contenedores necesarios y las configuraciones de volumen.
 
-**deployment-db.yaml**: Similar al archivo anterior, pero para desplegar una base de datos.
+[deployment-db.yaml](./deployment-db.yaml): Similar al archivo anterior, pero para desplegar una base de datos.
 
-**namespace.yaml**: Este archivo se utiliza para crear un "namespace" dentro del cluster de Kubernetes, el cual se utiliza para aislar los recursos de diferentes equipos o proyectos dentro de la misma instancia de Kubernetes.
+[namespace.yaml](./namespace.yaml): Este archivo se utiliza para crear un "namespace" dentro del cluster de Kubernetes, el cual se utiliza para aislar los recursos de diferentes equipos o proyectos dentro de la misma instancia de Kubernetes.
 
-**secret-config.yaml**: Este archivo contiene información confidencial, como contraseñas y tokens, que se utilizan en la aplicación y son necesarias para su funcionamiento.
+[secret-config.yaml](./secret-config.yaml): Este archivo contiene información confidencial, como contraseñas y tokens, que se utilizan en la aplicación y son necesarias para su funcionamiento.
 
-**service-app.yaml**: Este archivo define un servicio para la aplicación, que permite a los usuarios acceder a ella a través de una dirección IP o un nombre de dominio.
+[service-app.yaml](./service-app.yaml): Este archivo define un servicio para la aplicación, que permite a los usuarios acceder a ella a través de una dirección IP o un nombre de dominio.
 
-**service-db.yaml**: Similar al archivo anterior, pero para el servicio de la base de datos.
-**ssl-cert.yaml**: Este archivo contiene la configuración para un certificado SSL, que se utiliza para garantizar la conexión segura entre el usuario y la aplicación.
+[service-db.yaml](./service-db.yaml): Similar al archivo anterior, pero para el servicio de la base de datos.
 
-**storageClass.yaml**: Este archivo define la configuración para una clase de almacenamiento, que se utiliza para controlar cómo se almacenan los datos en una base de datos.
+[ssl-cert.yaml](./ssl-cert.yaml): Este archivo contiene la configuración para un certificado SSL, que se utiliza para garantizar la conexión segura entre el usuario y la aplicación.
+
+[storageClass.yaml](./storageClass.yaml): Este archivo define la configuración para una clase de almacenamiento, que se utiliza para controlar cómo se almacenan los datos en una base de datos.
 
 
 Cada uno de estos manifiestos tiene un papel específico en el despliegue y configuración de nuestra aplicación en un cluster de Kubernetes, juntos trabajan para asegurar que la aplicación esté disponible y sea segura para los usuarios, además de que los recursos estén aislados y se manejen de forma adecuada.
