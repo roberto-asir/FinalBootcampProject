@@ -6,8 +6,6 @@ Hemos decidido usar Kubernetes debido a su capacidad para escalar automáticamen
 
 Los manifiestos de Kubernetes son esenciales para el despliegue automatizado y reproducible de nuestra aplicación. Describen y definen la configuración de los recursos del sistema, como el número de réplicas, los contenedores necesarios, la configuración de volumen, los servicios y las clases de almacenamiento. Estos manifiestos son esenciales para asegurar que nuestra aplicación se despliegue y se ejecute correctamente en un cluster de Kubernetes.
 
-A continuación, explicaremos los manifiestos de Kubernetes que utilizamos en nuestro proyecto:
-
 **deployment-app.yaml**: Este archivo contiene la configuración para desplegar la aplicación en un cluster de Kubernetes. Incluye detalles como el número de réplicas, los contenedores necesarios y las configuraciones de volumen.
 
 **deployment-db.yaml**: Similar al archivo anterior, pero para desplegar una base de datos.
@@ -24,4 +22,4 @@ A continuación, explicaremos los manifiestos de Kubernetes que utilizamos en nu
 **storageClass.yaml**: Este archivo define la configuración para una clase de almacenamiento, que se utiliza para controlar cómo se almacenan los datos en una base de datos.
 
 
-Cada uno de estos manifiestos tiene un papel específico en el despliegue y configuración de nuestra aplicación en un cluster de Kubernetes, juntos trabajan para asegurar que la aplicación esté disponible y segura para los usuarios, y que los recursos estén aislados y se manejen de forma adecuada.
+Cada uno de estos manifiestos tiene un papel específico en el despliegue y configuración de nuestra aplicación en un cluster de Kubernetes, juntos trabajan para asegurar que la aplicación esté disponible y sea segura para los usuarios, además de que los recursos estén aislados y se manejen de forma adecuada.
