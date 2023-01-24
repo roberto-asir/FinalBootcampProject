@@ -119,4 +119,6 @@ Este comando iniciará los contenedores especificados en el archivo, y los mante
 ```
 docker-compose up -d
 ```
+# Acontinuación...
 
+El siguiente paso es utilizar Kubernetes para escalar y administrar nuestra aplicación mediante el uso de sus manifiestos y características de orquestación de contenedores.
