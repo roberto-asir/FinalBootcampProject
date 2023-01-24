@@ -1,21 +1,26 @@
+# Aquí se especifica la versión de la API de Kubernetes que se está utilizando y el tipo de recurso que se está definiendo, en este caso "apps/v1" y "Deployment" respectivamente.
 apiVersion: apps/v1
 kind: Deployment
+#En la sección "metadata" se especifican los metadatos relacionados con el despliegue, como su nombre y etiquetas. En este caso, se establece la etiqueta "app: quiz-app" y se establece el nombre del despliegue como "quiz-app" y el namespace como "practica"
 metadata:
   labels:
     app: quiz-app
   name: quiz-app
   namespace: practica
+# En "spec" se especifican los detalles del despliegue. Se establece que se deben ejecutar 1 réplica de la aplicación y se establecen las etiquetas de selección para que solo se ejecuten las réplicas en pods que tengan la etiqueta "app: quiz-app". Se establece una estrategia vacía, pero se podría especificar una estrategia de escalabilidad aquí si fuera necesario.
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: quiz-app
   strategy: {}
+# En la sección "template" se especifican los detalles del pod que se ejecutará. En su interior tenemos otra sección de "metadata" en la que se establecen las mismas etiquetas que en la sección "spec" anterior. Por otro lado, en la siguiente sección "spec" se especifican las configuraciones del contenedor, como la imagen del contenedor, los recursos permitidos, las variables de entorno y las pruebas de vitalidad y disponibilidad.
   template:
     metadata:
       labels:
         app: quiz-app
     spec:
+# "affinity", aquí se establece una afinidad y una anti-afinidad de los pods para asegurar que se ejecuten en un host específico.      
       affinity:
         podAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -69,4 +74,5 @@ spec:
         - name: check-db
           image: busybox:1.28
           command: ['sh', '-c', "until nc -zv quiz-app-service 27017; do sleep 5; done" ]
+# La sección "status" está vacía, pero se podría utilizar para verificar el estado del despliegue.
 status: {}
