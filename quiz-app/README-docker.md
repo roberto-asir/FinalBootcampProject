@@ -79,7 +79,7 @@ services:
         MONGODB_URI: mongodb://admin:admin1@mongo:27017/
 ```
 
-Nuestro "docker-compose.yml" utiliza Docker Compose para desplegar varios contenedores relacionados. A continuación se explica cada sección:
+Básicamente, este archivo "docker-compose.yaml" especifica la versión de Docker Compose y dos servicios "mongo" y "app" que se van a desplegar, especificando las imagenes a utilizar, los nombres de los contenedores, las variables de entorno, las dependencias y los puertos a exponer.
 
 **version: '3.1'**: Esta línea especifica la versión de Docker Compose que se está utilizando en este archivo.
 
@@ -107,4 +107,16 @@ Nuestro "docker-compose.yml" utiliza Docker Compose para desplegar varios conten
 
 **MONGODB_URI: mongodb://admin:admin1@mongo:27017/**: Esta línea establece la dirección de la base de datos MongoDB que se va a utilizar.
 
-Básicamente, este archivo "docker-compose.yml" especifica la versión de Docker Compose y dos servicios "mongo" y "app" que se van a desplegar, especificando las imagenes a utilizar, los nombres de los contenedores, las variables de entorno, las dependencias y los puertos a exponer.
+
+# Ejecutando Docker-compose
+
+Para ejecutar el archivo "docker-compose.yaml" anterior, se debe ejecutar el comando en la terminal desde el directorio donde se encuentra el archivo.
+```
+docker-compose up
+``` 
+Este comando iniciará los contenedores especificados en el archivo, y los mantendrá ejecutándose en segundo plano. También se puede usar para ejecutar los contenedores en segundo plano.
+
+```
+docker-compose up -d
+```
+
