@@ -29,7 +29,7 @@ Como grupo, nuestro objetivo en el proyecto final del bootcamp de DevOps es demo
 - [La aplicación](./quiz-app/quiz-app-Readme.md)
   - [README de la aplicación](./quiz-app/README.md)
 - [Docker](./quiz-app/README-docker.md)
-- Kubernetizacion
+- [Kubernetes](./k8s-app/README-kubernetes.md)
 - Helmetizado
 - La nube
   - Infraestructura
