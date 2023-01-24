@@ -22,7 +22,10 @@ Como grupo, nuestro objetivo en el proyecto final del bootcamp de DevOps es demo
 
 # DIAGRAMA
 ![diagrama-silicon-valley drawio2](https://user-images.githubusercontent.com/107815913/214021084-6ba7c3bb-d8bb-43a3-a2e6-7d2895cc9726.png)
+
 # Indice
+
+- Requisitos previos
 - [La aplicación (Local-Deployment)](./quiz-app/quiz-app-Readme.md)
   - [README de la aplicación (Local-Deployment)](./quiz-app/README.md)
 - Dockerizacion
@@ -36,6 +39,20 @@ Como grupo, nuestro objetivo en el proyecto final del bootcamp de DevOps es demo
 - Aspectos a mejorar
 
 ==============================================================================================================================================
+
+## Requisitos previos
+
+-  gitclone a este repo
+-  instalados los siguientes recursos
+  - docker 
+  - git si vas a hacer un gitclone
+  - cuenta de gcp
+  - cuenta de github 
+  - cuenta de dockerhub
+  
+
+
+
 En estos momentos está hecho:
 
 - Dockerización de la app
