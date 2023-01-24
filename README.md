@@ -28,7 +28,7 @@ Como grupo, nuestro objetivo en el proyecto final del bootcamp de DevOps es demo
 - Requisitos previos
 - [La aplicación (Local-Deployment)](./quiz-app/quiz-app-Readme.md)
   - [README de la aplicación (Local-Deployment)](./quiz-app/README.md)
-- Dockerizacion
+- [Docker(Local-Deployment)](./quiz-app/README-docker.md)
 - Kubernetizacion
 - Helmetizado
 - La nube
