@@ -48,4 +48,63 @@ Construimos una imagen desde un Dockerfile mediante el comando "docker build" es
 docker build -t carlosfeufernandez/app-quiz-pf .
 ```
 
-sadf
+# El docker-compose 
+
+Usamos Docker Compose en nuestro proyecto para facilitar la configuración y el despliegue de varios contenedores relacionados. Docker Compose nos permite especificar en un archivo "docker-compose.yml" los contenedores, volúmenes, redes y configuraciones necesarias para ejecutar nuestra aplicación, permitiéndonos iniciar y detener todos los contenedores de manera fácil y automatizada. Además, Docker Compose nos permite escalar fácilmente nuestros servicios y mejorar la eficiencia en el uso de recursos.
+
+# Explicando nuestro Docker-compose 
+
+```
+version: '3.1'
+services:
+    mongo:
+      image: mongo
+      container_name: mongodb
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: admin
+        MONGO_INITDB_ROOT_PASSWORD: admin1
+      ports:
+        - 27017:27017
+
+      
+    app:
+      depends_on:
+        - "mongo"
+      image: carlosfeufernandez/app-quiz-pf
+      ports: 
+        - 5000:5000
+      environment:
+        # MONGO_INITDB_ROOT_USERNAME: admin
+        # MONGO_INITDB_ROOT_PASSWORD: admin1
+        MONGODB_URI: mongodb://admin:admin1@mongo:27017/
+```
+
+Nuestro "docker-compose.yml" utiliza Docker Compose para desplegar varios contenedores relacionados. A continuación se explica cada sección:
+
+**version: '3.1'**: Esta línea especifica la versión de Docker Compose que se está utilizando en este archivo.
+
+**services:**: Esta sección especifica los servicios o contenedores que se van a desplegar.
+
+**mongo:**: Este es el primer servicio que se va a desplegar, y utiliza una imagen oficial de MongoDB.
+
+**image: mongo**: Esta línea especifica la imagen que se va a utilizar para este servicio. En este caso se utiliza la imagen oficial de MongoDB.
+
+**container_name**: mongodb: Esta línea especifica el nombre del contenedor que se creará al ejecutar este servicio.
+
+**environment:**: Esta sección especifica las variables de entorno que se deben establecer en el contenedor.
+
+**MONGO_INITDB_ROOT_USERNAME: admin y MONGO_INITDB_ROOT_PASSWORD: admin1**: Estas líneas establecen el nombre de usuario y la contraseña para el usuario root de MongoDB.
+
+**ports:**: Esta sección especifica los puertos que se deben exponer. En este caso, se está exponiendo el puerto 27017 del contenedor al puerto 27017 del host.
+
+**app:**: Este es el segundo servicio que se va a desplegar, y utiliza una imagen construida desde un Dockerfile con el nombre carlosfeufernandez/app-quiz-pf.
+
+**depends_on:**: Esta sección especifica que este servicio depende del servicio "mongo" para poder funcionar.
+
+**ports:**: Esta sección especifica los puertos que se deben exponer. En este caso, se está exponiendo el puerto 5000 del contenedor al puerto 5000 del host.
+
+**environment:**: Esta sección especifica las variables de entorno que se deben establecer en el contenedor.
+
+**MONGODB_URI: mongodb://admin:admin1@mongo:27017/**: Esta línea establece la dirección de la base de datos MongoDB que se va a utilizar.
+
+Básicamente, este archivo "docker-compose.yml" especifica la versión de Docker Compose y dos servicios "mongo" y "app" que se van a desplegar, especificando las imagenes a utilizar, los nombres de los contenedores, las variables de entorno, las dependencias y los puertos a exponer.
