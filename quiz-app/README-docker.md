@@ -121,4 +121,4 @@ docker-compose up -d
 ```
 # A continuación...
 
-El siguiente paso es utilizar Kubernetes para escalar y administrar nuestra aplicación mediante el uso de sus manifiestos y características de orquestación de contenedores.
+El siguiente paso es utilizar [Kubernetes](../k8s-app/README-kubernetes.md) para escalar y administrar nuestra aplicación mediante el uso de sus manifiestos y características de orquestación de contenedores. 
