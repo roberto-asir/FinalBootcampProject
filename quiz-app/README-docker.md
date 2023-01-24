@@ -2,6 +2,9 @@
 
 Después de evaluar varias opciones, decidimos utilizar Docker en nuestro proyecto de práctica final de DevOps debido a las ventajas que ofrece. En particular, nos atrajo la portabilidad que proporciona, lo que nos permite mover fácilmente nuestra aplicación entre diferentes entornos. También nos gustó el nivel adicional de aislamiento que proporciona entre las aplicaciones, lo que ayudará a evitar conflictos de dependencias y configuraciones. Además, la interfaz de línea de comandos fácil de usar y la gran comunidad de desarrolladores que han creado una gran cantidad de contenedores de aplicaciones de software libre para una variedad de plataformas nos ayudará a hacer el trabajo más fácil. Y la escalabilidad y el ahorro de recursos que ofrece también son ventajas importantes para nuestro proyecto. En resumen, creemos que Docker es la mejor opción para nuestro proyecto de práctica final de DevOps debido a su portabilidad, aislamiento, facilidad de uso, escalabilidad y ahorro de recursos.
 
+# El Dockerfile
+Usamos Dockerfile para crear imágenes de contenedores automatizadas que encapsulan nuestra aplicación y sus dependencias. Esto nos permite desplegar nuestra aplicación de manera consistente y predecible en cualquier entorno. Además, Dockerfile nos permite escalar fácilmente nuestra aplicación y mejorar la eficiencia en el uso de recursos.
+
 # Explicando nuestro Dockerfile 
 
 ```
@@ -36,3 +39,13 @@ Este Dockerfile es un ejemplo de cómo construimos nuestra imagen de contenedor 
 **CMD python server.py**: Esta línea especifica el comando que se ejecutará cuando se inicie el contenedor. En este caso, se está ejecutando el archivo "server.py" mediante el intérprete de Python.
 
 En resumen, este Dockerfile especifica cómo construir una imagen de contenedor para una aplicación Python utilizando la imagen base de Python en su versión 3.10 sobre Alpine Linux, se copian los archivos necesarios y se instalan las dependencias especificadas en el archivo "requirements.txt", se expone el puerto 5000 y se ejecuta el comando python server.py al iniciar el contenedor.
+
+# Construyendo nuestra imagen.
+
+Construimos una imagen desde un Dockerfile mediante el comando "docker build" especificando el nombre y etiqueta de la imagen "carlosfeufernandez/app-quiz-pf" y indicando el archivo Dockerfile en el directorio actual. Este proceso permite automatizar la creación de imágenes que encapsulan nuestra aplicación y sus dependencias, permitiendo desplegarla de manera consistente y predecible en cualquier entorno.
+
+```
+docker build -t carlosfeufernandez/app-quiz-pf .
+```
+
+sadf
