@@ -26,7 +26,7 @@ Resumiendo, utilizar Terraform junto con GitHub Actions es una excelente opción
 
 # El estado de Terraform
 
-El motivo de almacenar el estado de Terraform en un bucket de GCP se debe a la necesidad de compartir el estado entre diferentes miembros de un equipo de desarrollo. El estado de Terraform es un archivo que contiene información sobre los recursos provisionados en un environment, como la configuración de una máquina virtual o el estado de una red. Al almacenar el estado en un bucket de GCP, todos los miembros del equipo pueden acceder al mismo archivo y ver la misma información. Esto permite una mayor colaboración y transparencia en el equipo, ya que todos pueden ver las acciones realizadas en el environment.
+El motivo de almacenar el estado de Terraform en un bucket de GCP se debe a la necesidad de compartir el estado entre diferentes miembros de un equipo de desarrollo. El estado de Terraform es un archivo que contiene información sobre los recursos provisionados en un entorno, como la configuración de una máquina virtual o el estado de una red. Al almacenar el estado en un bucket de GCP, todos los miembros del equipo pueden acceder al mismo archivo y ver la misma información. Esto permite una mayor colaboración y transparencia en el equipo, ya que todos pueden ver las acciones realizadas en el entorno.
 
 Además, almacenar el estado en un bucket de GCP también proporciona una mayor seguridad ya que el estado se guarda en un lugar seguro y seguridad en la nube, también facilita la recuperación en caso de fallos o problemas.
 
