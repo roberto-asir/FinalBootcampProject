@@ -26,3 +26,7 @@ Los manifiestos de Kubernetes son esenciales para el despliegue automatizado y r
 Cada uno de estos manifiestos tiene un papel específico en el despliegue y configuración de nuestra aplicación en un cluster de Kubernetes, juntos trabajan para asegurar que la aplicación esté disponible y sea segura para los usuarios, además de que los recursos estén aislados y se manejen de forma adecuada.
 
 Además, hemos analizado y descrito con mas detalle las secciones más relevantes de nuestros manifiestos de Kubernetes, proporcionando explicaciones detalladas de cómo se utilizan y para qué sirven.
+
+# A continuacion...
+
+Procederemos a crear los manifiestos de [Helm](../quiz-app-helm/README-helm.md) que nos permitirán llevar a cabo el despliegue de manera eficiente.
