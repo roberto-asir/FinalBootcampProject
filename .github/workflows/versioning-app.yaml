@@ -82,5 +82,9 @@ jobs:
           VERSION: ${{ env.VERSION }}
 
 
+      - name: Configure app version
+        run: |
+          sed -i "s/^app.version:.*$/app.version: ${{ env.VERSION }}/" quiz-app-helm/values.yaml
+
     outputs:
       version: ${{ env.VERSION }}
