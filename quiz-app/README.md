@@ -13,7 +13,7 @@ export "MONGODB_URI = mongodb+srv://username:password@learnmongo.scjon.mongodb.n
 - Rest API
 - Add Quiz 
 - Upload Quiz From CSV 
-- Upload Quiz from JSON
+- Upload Quiz from JSON 
 - Edit Quiz
 - Delete QUiz 
 - Quiz author can see score that if quiz were done by other users ( only for logged in users ) 
