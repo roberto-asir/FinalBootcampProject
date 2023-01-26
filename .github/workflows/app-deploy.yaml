@@ -1,15 +1,19 @@
 name: "APP DEPLOY"
 
 on:
-  release:
-    types: [published, released]
-    branches:
-      - main
+  # release:
+  #   types: [published, released]
+  #   branches:
+  #     - main
   push:
     paths:
     - 'quiz-app-helm/**'
     branches:
       - main
+  workflow_run:
+    workflows: ["release-build"]
+    types:
+      - completed
   
 
 
@@ -34,8 +38,8 @@ jobs:
       - id: 'auth'
         uses: 'google-github-actions/auth@v1'
         with:
-          workload_identity_provider: 'projects/716195497641/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
-          service_account: 'practica-carlos-sv@cosmic-tensor-371107.iam.gserviceaccount.com'
+          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
 
       - id: 'get-credentials'
         uses: 'google-github-actions/get-gke-credentials@v1'

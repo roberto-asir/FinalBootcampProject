@@ -1,10 +1,10 @@
 name: release-build
 
 on:
-  release:
-    types: [published, released]
-    branches:
-      - main
+  # release:
+  #   types: [published, released]
+  #   branches:
+  #     - main
   push:
     paths:
     - 'quiz-app/**'
