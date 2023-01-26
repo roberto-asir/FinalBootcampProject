@@ -1,13 +1,17 @@
 name: release-build
 
 on:
+  release:
+    types: [published, released]
+    branches:
+      - main
   push:
     paths:
     - 'quiz-app/**'
   #workflow_run:
     #workflows:
       #- ""
-    #branches: [ main ]
+    branches: main 
     #types:
       #- completed
     
