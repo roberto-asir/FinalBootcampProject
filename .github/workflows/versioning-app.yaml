@@ -91,7 +91,7 @@ jobs:
                   body: `This release contains the version ${version} of the quiz app`,
                 });
               }
-
+          }
         
       - name: Build and push Docker image
         if: ${{ env.VERSION != '' }}
