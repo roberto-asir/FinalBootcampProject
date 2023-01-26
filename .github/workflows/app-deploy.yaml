@@ -61,7 +61,7 @@ jobs:
       #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'
       #   run: kubectl get pods -A
       - name: Update release version
-        uses: actions/github-script@0.10.0
+        uses: actions/github-script@3.5.1
         with:
           script: |
             const version = process.env.VERSION;
