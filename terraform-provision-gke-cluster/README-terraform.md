@@ -32,15 +32,15 @@ Además, almacenar el estado en un bucket de GCP también proporciona una mayor 
 
 # Los archivos de Terraform
 
-backend.tf: El archivo backend.tf es un archivo de configuración de Terraform que especifica cómo y dónde se almacenará el estado de Terraform. Este archivo especifica que se está utilizando el backend de GCS (Google Cloud Storage) para almacenar el estado de Terraform. El archivo especifica el nombre del bucket en el cual se almacenará el estado de Terraform y un prefijo que se utilizará para el archivo de estado en el bucket especificado. En resumen, el archivo backend.tf configura el almacenamiento en la nube del estado de Terraform para permitir la colaboración y la transparencia entre los miembros del equipo.
+[backend.tf](./backend.tf): El archivo backend.tf es un archivo de configuración de Terraform que especifica cómo y dónde se almacenará el estado de Terraform. Este archivo especifica que se está utilizando el backend de GCS (Google Cloud Storage) para almacenar el estado de Terraform. El archivo especifica el nombre del bucket en el cual se almacenará el estado de Terraform y un prefijo que se utilizará para el archivo de estado en el bucket especificado. En resumen, el archivo backend.tf configura el almacenamiento en la nube del estado de Terraform para permitir la colaboración y la transparencia entre los miembros del equipo.
 
-gke.tf: Este archivo gke.tf es un archivo de configuración de Terraform que se utiliza para crear y configurar un clúster de Kubernetes en Google Kubernetes Engine (GKE).
+[gke.tf](./gke.tf): Este archivo gke.tf es un archivo de configuración de Terraform que se utiliza para crear y configurar un clúster de Kubernetes en Google Kubernetes Engine (GKE).
 En primer lugar, se declaran tres variables: "gke_username", "gke_password" y "gke_num_nodes". La variable "gke_username" y "gke_password" son credenciales de acceso necesarias para crear y administrar el clúster de GKE. La variable "gke_num_nodes" especifica el número de nodos que se utilizarán en el clúster.
 A continuación, se utiliza el recurso "google_container_cluster" para crear el clúster de GKE. El nombre del clúster se establece en una variable "${var.project_id}-gke", y su ubicación se establece en una variable "var.region". Se configura el clúster para no tener un nodo pool por defecto y se establece el número inicial de nodos en 1.
 Luego, se utiliza el recurso "google_container_node_pool" para crear un nodo pool separado. El nombre del nodo pool se establece en una variable "${google_container_cluster.primary.name}", su ubicación se establece en una variable "var.region" y se especifica el número de nodos que se utilizarán en el clúster.
 Por último, se utiliza el proveedor "kubernetes" para configurar el acceso al clúster de GKE. Se especifica que se cargará el archivo de configuración de forma manual, se establecen las credenciales de acceso y se proporciona la información necesaria para autenticar la conexión al clúster.
 
-kubernetes-dashboard-admin-rbac.yaml: se utiliza para configurar los permisos de un usuario en el dashboard de Kubernetes.
+[kubernetes-dashboard-admin-rbac.yaml](./kubernetes-dashboard-admin-rbac.yaml): se utiliza para configurar los permisos de un usuario en el dashboard de Kubernetes.
 El archivo consta de dos secciones:
 La primera sección, "apiVersion: v1 kind: ServiceAccount" define una cuenta de servicio llamada "admin-user" en el namespace "kube-system".
 La segunda sección, "apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding" define una asociación de rol de clúster llamada "admin-user" que otorga al usuario "admin-user" los permisos del rol "cluster-admin" en todo el clúster.
@@ -48,13 +48,13 @@ Como consecuencia, este archivo se utiliza para crear una cuenta de servicio lla
 
 Hemos tenido en cuenta que esta configuración es referente al uso del Dashboard de Kubernetes y no al uso de Terraform con Kubernetes, pero lo hemos incluido dentro de Terraform porque la intención era asignar roles y permisos dentro del cluster que desplegamos como infraestructura.
 
-outputs.tf: El archivo outputs.tf es utilizado para especificar las salidas que Terraform debe mostrar una vez que se hayan aplicado los cambios. En este caso, se establecen cuatro salidas: "region", "project_id", "kubernetes_cluster_name" y "kubernetes_cluster_host". Estas salidas son para verificar y obtener informacion especifica de la infraestructura que se esta creando con terraform, como el nombre del cluster o el id del proyecto
+[outputs.tf](./outputs.tf): El archivo outputs.tf es utilizado para especificar las salidas que Terraform debe mostrar una vez que se hayan aplicado los cambios. En este caso, se establecen cuatro salidas: "region", "project_id", "kubernetes_cluster_name" y "kubernetes_cluster_host". Estas salidas son para verificar y obtener informacion especifica de la infraestructura que se esta creando con terraform, como el nombre del cluster o el id del proyecto
 
-terraform.tfvars es utilizado para especificar los valores de las variables utilizadas en los archivos de configuración de Terraform. En este caso, especifica el ID del proyecto y la región en la que se crearán los recursos en GCP. Al ejecutar el comando terraform apply, Terraform utilizará estos valores para crear los recursos en el proyecto y la región especificados. 
+[terraform.tfvars](./terraform.tfvars): es utilizado para especificar los valores de las variables utilizadas en los archivos de configuración de Terraform. En este caso, especifica el ID del proyecto y la región en la que se crearán los recursos en GCP. Al ejecutar el comando terraform apply, Terraform utilizará estos valores para crear los recursos en el proyecto y la región especificados. 
 
-versions.tf es un archivo de configuración de Terraform utilizado para especificar las versiones de los recursos o módulos que se utilizarán en el proyecto. En este caso, se está especificando que se requiere de la versión 4.27.0 del proveedor de Google de Terraform y que se requiere una versión de Terraform mayor o igual a 0.14. Esto garantiza que la configuración funcione correctamente con las versiones especificadas de los proveedores y de Terraform.
+[versions.tf](./versions.tf): es un archivo de configuración de Terraform utilizado para especificar las versiones de los recursos o módulos que se utilizarán en el proyecto. En este caso, se está especificando que se requiere de la versión 4.27.0 del proveedor de Google de Terraform y que se requiere una versión de Terraform mayor o igual a 0.14. Esto garantiza que la configuración funcione correctamente con las versiones especificadas de los proveedores y de Terraform.
 
-Este archivo, llamado vpc.tf, es un archivo de configuración de Terraform que se utiliza para crear una red virtual privada (VPC) y una subred en Google Cloud Platform (GCP) mediante el proveedor de Terraform de Google.
+[vpc.tf](./vpc.tf): es un archivo de configuración de Terraform que se utiliza para crear una red virtual privada (VPC) y una subred en Google Cloud Platform (GCP) mediante el proveedor de Terraform de Google.
 
 En primer lugar, se definen dos variables: "project_id" y "region". Estas variables se utilizan para especificar el ID del proyecto y la región en GCP en la que se crearán la VPC y la subred.
 
