@@ -1688,8 +1688,5 @@ data:
     }
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2023-01-23T10:53:58Z"
   name: dashboard-sv
   namespace: monitoring
-  resourceVersion: "5136892"
-  uid: 405d38b6-f726-4fd5-b10f-cdd6027ea9e9
