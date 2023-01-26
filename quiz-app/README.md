@@ -12,7 +12,7 @@ export "MONGODB_URI = mongodb+srv://username:password@learnmongo.scjon.mongodb.n
 - Search Quiz
 - Rest API
 - Add Quiz 
-- Upload Quiz From CSV
+- Upload Quiz From CSV 
 - Upload Quiz from JSON
 - Edit Quiz
 - Delete QUiz 
