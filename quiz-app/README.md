@@ -8,7 +8,7 @@ export "MONGODB_URI = mongodb+srv://username:password@learnmongo.scjon.mongodb.n
 ```
 
 ## Features 
-- CRUD with ajax
+- CRUD with ajax.
 - Search Quiz
 - Rest API
 - Add Quiz 
