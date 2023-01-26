@@ -74,7 +74,7 @@ jobs:
           echo VERSION=$(cat semantic_release_version.txt) >> $GITHUB_ENV
       - name: Create release
         if: ${{ env.VERSION != '' }}
-        uses: actions/github-script@3.5.1
+        uses: actions/github-script@v6
         with:
           script: |
             const version = process.env.VERSION;
