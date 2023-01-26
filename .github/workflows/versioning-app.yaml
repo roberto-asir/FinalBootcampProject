@@ -86,7 +86,8 @@ jobs:
         uses: actions/workflow-run@v2
         with:
           name: app-deploy
-          path: app-deploy.yaml
+          path: .github/workflows/app-deploy.yaml
           persist-credentials: true
+          debug: true
     outputs:
       version: ${{ env.VERSION }}
