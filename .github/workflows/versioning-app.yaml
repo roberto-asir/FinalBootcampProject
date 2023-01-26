@@ -84,7 +84,14 @@ jobs:
 
       - name: Configure app version
         run: |
-          sed -i "s/^app.version:.*$/app.version: ${{ env.VERSION }}/" quiz-app-helm/values.yaml
+          sed -i "s/^appVersion:.*$/appVersion: ${{ env.VERSION }}/" quiz-app-helm/values.yaml
+
+      - name: Update resources
+        uses: test-room-7/action-update-file@v1
+        with:
+            file-path: quiz-app-helm/values.yaml
+            commit-msg: Update .Values.appVersion
+            github-token: ${{ secrets.GITHUB_TOKEN }}
 
     outputs:
       version: ${{ env.VERSION }}
