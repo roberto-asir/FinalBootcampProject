@@ -60,22 +60,3 @@ jobs:
       # - id: get-pods-after-bootstrap
       #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'
       #   run: kubectl get pods -A
-      - name: Update release version
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const version = process.env.VERSION;
-            if (version) {
-              const release = await github.repos.getReleaseByTag({ owner: context.repo.owner, repo: context.repo.repo, tag: version });
-              if (release) {
-                const releaseId = release.data.id;
-                await github.repos.updateRelease({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  release_id: releaseId,
-                  name: `Release ${version}`,
-                  tag_name: version,
-                  body: `This release contains the version ${version} of the quiz app`,
-                });
-              }
-            }
