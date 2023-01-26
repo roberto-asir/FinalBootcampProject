@@ -6,7 +6,9 @@ on:
     - 'quiz-app-helm/**'
     branches:
       - main
-  pull_request:
+  release:
+    types: [published]
+
 
 jobs:
   app:
