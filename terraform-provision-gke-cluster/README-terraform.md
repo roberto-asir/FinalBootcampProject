@@ -48,16 +48,13 @@ Como consecuencia, este archivo se utiliza para crear una cuenta de servicio lla
 
 Hemos tenido en cuenta que esta configuración es referente al uso del Dashboard de Kubernetes y no al uso de Terraform con Kubernetes, pero lo hemos incluido dentro de Terraform porque la intención era asignar roles y permisos dentro del cluster que desplegamos como infraestructura.
 
-[outputs.tf](./outputs.tf): El archivo outputs.tf es utilizado para especificar las salidas que Terraform debe mostrar una vez que se hayan aplicado los cambios. En este caso, se establecen cuatro salidas: "region", "project_id", "kubernetes_cluster_name" y "kubernetes_cluster_host". Estas salidas son para verificar y obtener informacion especifica de la infraestructura que se esta creando con terraform, como el nombre del cluster o el id del proyecto
+[outputs.tf](./outputs.tf):Es utilizado para especificar las salidas que Terraform debe mostrar una vez que se hayan aplicado los cambios. En este caso, se establecen cuatro salidas: "region", "project_id", "kubernetes_cluster_name" y "kubernetes_cluster_host". Estas salidas son para verificar y obtener informacion especifica de la infraestructura que se esta creando con terraform, como el nombre del cluster o el id del proyecto
 
 [terraform.tfvars](./terraform.tfvars): es utilizado para especificar los valores de las variables utilizadas en los archivos de configuración de Terraform. En este caso, especifica el ID del proyecto y la región en la que se crearán los recursos en GCP. Al ejecutar el comando terraform apply, Terraform utilizará estos valores para crear los recursos en el proyecto y la región especificados. 
 
-[versions.tf](./versions.tf): es un archivo de configuración de Terraform utilizado para especificar las versiones de los recursos o módulos que se utilizarán en el proyecto. En este caso, se está especificando que se requiere de la versión 4.27.0 del proveedor de Google de Terraform y que se requiere una versión de Terraform mayor o igual a 0.14. Esto garantiza que la configuración funcione correctamente con las versiones especificadas de los proveedores y de Terraform.
+[versions.tf](./versions.tf): Creado para especificar las versiones de los recursos o módulos que se utilizarán en el proyecto. En este caso, se está especificando que se requiere de la versión 4.27.0 del proveedor de Google de Terraform y que se requiere una versión de Terraform mayor o igual a 0.14. Esto garantiza que la configuración funcione correctamente con las versiones especificadas de los proveedores y de Terraform.
 
-[vpc.tf](./vpc.tf): es un archivo de configuración de Terraform que se utiliza para crear una red virtual privada (VPC) y una subred en Google Cloud Platform (GCP) mediante el proveedor de Terraform de Google.
-
+[vpc.tf](./vpc.tf): Usamos este archivo para crear una red virtual privada (VPC) y una subred en Google Cloud Platform (GCP) mediante el proveedor de Terraform de Google.
 En primer lugar, se definen dos variables: "project_id" y "region". Estas variables se utilizan para especificar el ID del proyecto y la región en GCP en la que se crearán la VPC y la subred.
-
 Luego, se define el proveedor de Google, especificando el ID del proyecto y la región de las variables anteriores.
-
 Por último, se utilizan los recursos de Terraform "google_compute_network" y "google_compute_subnetwork" para crear una VPC y una subred, respectivamente. La VPC se llama "${var.project_id}-vpc" y se establece la opción "auto_create_subnetworks" en "false" para indicar que no se crearán automáticamente subredes dentro de la VPC. La subred se llama "${var.project_id}-subnet", se ubica en la región especificada en la variable "region", se asocia con la VPC creada
