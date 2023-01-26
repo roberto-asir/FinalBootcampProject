@@ -86,7 +86,7 @@ jobs:
         uses: actions/workflow-run@v2
         with:
           name: app-deploy
-          path: .github/workflows/app-deploy.yaml
+          path: ./.github/workflows/app-deploy.yaml
           persist-credentials: true
           debug: true
     outputs:
