@@ -39,7 +39,7 @@ spec:
               weight: 1
       containers:
         #- image: carlosfeufernandez/app-quiz-pf:latest
-      - image: carlosfeufernandez/silicon-valley-proyecto-final:{{ .Values.app.version }}
+      - image: carlosfeufernandez/silicon-valley-proyecto-final:{{ .Values.appVersion }}
         name: app-quiz-pf
         ports:
           - containerPort: 5000
