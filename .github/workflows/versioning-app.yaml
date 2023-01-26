@@ -72,28 +72,7 @@ jobs:
         id: get_version
         run: |
           echo VERSION=$(cat semantic_release_version.txt) >> $GITHUB_ENV
-          
-      - name: Create release
-        if: ${{ env.VERSION != '' }}
-        uses: actions/github-script@v6
-        with:
-          script: |
-            async function main() {
-              const version = process.env.VERSION;
-              if (version) {
-                const existingRelease = await github.repos.getReleaseByTag({ owner: context.repo.owner, repo: context.repo.repo, tag: version });
-                if (!existingRelease) {
-                  await github.repos.createRelease({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    tag_name: version,
-                    name: `Release ${version}`,
-                    body: `This release contains the version ${version} of the quiz app`,
-                  });
-                }
-              }
-            }
-            main();
+
 
         
       - name: Build and push Docker image
