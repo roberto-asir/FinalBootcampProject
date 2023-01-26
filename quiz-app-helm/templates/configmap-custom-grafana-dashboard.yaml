@@ -1037,7 +1037,7 @@ data:
               "expr": "sum(irate(container_network_receive_bytes_total{job=\"kubelet\", metrics_path=\"/metrics/cadvisor\", cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"$pod\"}[$__rate_interval])) by (pod)",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "  `{{pod}}`  }} ",
+              "legendFormat": "{{ `{{pod}}` }} ",
               "refId": "A",
               "step": 10
             }
@@ -1124,7 +1124,7 @@ data:
               "expr": "sum(irate(container_network_transmit_bytes_total{job=\"kubelet\", metrics_path=\"/metrics/cadvisor\", cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"$pod\"}[$__rate_interval])) by (pod)",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{  `{{pod}}`  }} ",
+              "legendFormat": "{{ `{{pod}}` }} ",
               "refId": "A",
               "step": 10
             }
