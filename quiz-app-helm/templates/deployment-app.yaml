@@ -38,7 +38,8 @@ spec:
                 topologyKey: kubernetes.io/hostname
               weight: 1
       containers:
-      - image: carlosfeufernandez/app-quiz-pf:latest
+        #- image: carlosfeufernandez/app-quiz-pf:latest
+      - image: carlosfeufernandez/silicon-valley-proyecto-final:latest
         name: app-quiz-pf
         ports:
           - containerPort: 5000
