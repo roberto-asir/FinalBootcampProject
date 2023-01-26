@@ -79,7 +79,12 @@ jobs:
         run: make publish
         env:
           VERSION: ${{ env.VERSION }}
-
+      - name: Deploy app
+        if: ${{ env.VERSION != '' }}
+        uses: actions/workflow-run@v2
+        with:
+          name: app-deploy
+          path: practica-final--silicon-valley/.github/workflows/app-deploy.yaml
 
     outputs:
       version: ${{ env.VERSION }}
