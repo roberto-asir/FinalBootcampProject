@@ -12,3 +12,6 @@ Helm nos permite definir una configuración de aplicación en un archivo de conf
 Hemos tratado de implementar una metodología ágil en nuestro despliegue, y queriamos una versión funcional lo antes posible. Debido a esto, y premeditadamente, tenemos en cuenta que modificar los values de nuestro Helm es una deuda técnica.
 No obstante, aunque en este caso particular no hayamos modificado ningún value, estamos aprovechando de las ventajas de Helm de manera más básica. Esto nos permite ahorrar tiempo y esfuerzo en el proceso de despliegue de nuestras aplicaciones en Kubernetes, y su integración con GitHub Actions es una herramienta adicional para facilitar aún más el proceso y seguir una metodología ágil.
 
+# A continuación...
+
+"Después de haber utilizado Helm para la gestión de nuestros paquetes de aplicaciones, hemos optado por utilizar Terraform para llevar a cabo el despliegue en Google Cloud. Esto permitirá automatizar y simplificar el proceso de configuración de la infraestructura en la nube, además de proporcionar una mayor flexibilidad y escalabilidad en nuestra arquitectura."
