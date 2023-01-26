@@ -1,13 +1,14 @@
 name: "APP DEPLOY"
 
 on:
+  release:
+    types: [published]
   push:
     paths:
     - 'quiz-app-helm/**'
     branches:
       - main
-  release:
-    types: [published]
+  
 
 
 jobs:
