@@ -47,8 +47,8 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
 ## Requisitos previos
 
 
-  - [Docker](https://docs.docker.com/engine/install/ubuntu/)(si quieres usar tu propia imagen)  
-  - [Git](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Instalaci%C3%B3n-de-Git) Git (no es estrictamente necesario) 
+  - [Docker](https://docs.docker.com/engine/install/ubuntu/) (si quieres usar tu propia imagen)  
+  - [Git](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Instalaci%C3%B3n-de-Git) (no es estrictamente necesario) 
   - [Terraform](https://terraform-infraestructura.readthedocs.io/es/latest/instalacion/) (no es necesario si se crea el bucket manualmente)
   - [Cuenta de GCP](https://cloud.google.com/apigee/docs/hybrid/v1.4/precog-gcpaccount?hl=es-419)
   - [Instalar CLI GCP](https://cloud.google.com/sdk/docs/install?hl=es-419)
