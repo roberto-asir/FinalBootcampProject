@@ -76,11 +76,11 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
 
 En este proyecto hemos logrado:
 
-  *Crear una imagen de Docker a partir de una aplicación al azar y utilizarla junto con los manifiestos de Kubernetes para convertirlos en charts de Helm.
-  *Desplegar un cluster de Kubernetes en GCP utilizando Terraform, lo que nos permite tener una infraestructura escalable y confiable.
-  *Utilizar Github Actions para automatizar el despliegue de la aplicación y la infraestructura, lo que agiliza el proceso de desarrollo y mejora la eficiencia.
-  *Crear un sistema de monitorización con Grafana y Prometheus, lo que nos permite tener una visibilidad en tiempo real del rendimiento de nuestra aplicación.
-  *Realizar una liberación semántica que actualiza automáticamente la imagen en Dockerhub, el archivo de valores de Helm y vuelve a lanzar el despliegue, lo que garantiza una mayor estabilidad y seguridad en nuestra aplicación.
+  * Crear una imagen de Docker a partir de una aplicación al azar y utilizarla junto con los manifiestos de Kubernetes para convertirlos en charts de Helm.
+  * Desplegar un cluster de Kubernetes en GCP utilizando Terraform, lo que nos permite tener una infraestructura escalable y confiable.
+  * Utilizar Github Actions para automatizar el despliegue de la aplicación y la infraestructura, lo que agiliza el proceso de desarrollo y mejora la eficiencia.
+  * Crear un sistema de monitorización con Grafana y Prometheus, lo que nos permite tener una visibilidad en tiempo real del rendimiento de nuestra aplicación.
+  * Realizar una liberación semántica que actualiza automáticamente la imagen en Dockerhub, el archivo de valores de Helm y vuelve a lanzar el despliegue, lo que garantiza una mayor estabilidad y seguridad en nuestra aplicación.
   
 En general, este proyecto demuestra ser altamente eficaz en el uso de herramientas DevOps para mejorar la velocidad, calidad y escalabilidad de  aplicaciones.
 
