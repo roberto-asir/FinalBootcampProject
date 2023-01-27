@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'terraform-provision-gke-cluster/**'
+    - '!**/*.md'
     branches:
       - main
   pull_request:
