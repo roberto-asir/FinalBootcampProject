@@ -28,8 +28,8 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
 
 # Indice
 
-- Requisitos previos
-- Hacer funcionar nuestro proyecto
+- [Requisitos previos](#requisitos-previos)
+- [Hacer funcionar nuestro proyecto](#hacer-funcionar-nuestro-proyecto)
 - [La aplicación](./quiz-app/quiz-app-Readme.md)
   - [README de la aplicación](./quiz-app/README.md)
 - [Docker](./quiz-app/README-docker.md)
@@ -38,8 +38,8 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
 - [LA nube](./terraform-provision-gke-cluster/README-terraform.md)
 - [CI/CD](./.github/workflows/README-workflows.md)
 - [Monitorización](./terraform-provision-gke-cluster/assets/README-monitoring.md) 
-- Conclusiones
-- Aspectos a mejorar
+- [Conclusiones](#conclusiones)
+- [Aspectos a mejorar](#aspectos-a-mejorar)
 
 
 ==============================================================================================================================================
@@ -64,7 +64,7 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
   - [Cuenta de dockerhub](https://hub.docker.com/signup)
   
   
-## !!!!!! REVISAR CHICOS!!!!!!!!!  Lanzar proyecto (HACER un makefile que haga todos estos pasos?)
+## Hacer funcionar nuestro proyecto
 
   1. Descargar repo con    
 ```
@@ -89,7 +89,7 @@ git clone git@github.com:KeepCodingCloudDevops6/Practica-Final-Silicon-Valley.gi
 ![prsctics finsl silicon-valley drawio](https://user-images.githubusercontent.com/107815913/215132972-4ba5e6ba-8c73-42f0-8b3a-12b63e8a8a99.png)
   
 
-## Conclusiones:
+## Conclusiones
 
 En este proyecto hemos logrado:
 
@@ -101,7 +101,7 @@ En este proyecto hemos logrado:
   
 En general, este proyecto demuestra ser altamente eficaz en el uso de herramientas DevOps para mejorar la velocidad, calidad y escalabilidad de  aplicaciones.
 
-## Mejoras
+## Aspectos a mejorar 
 
 - Reducir gasto computacional, nuestra imagen podria ser mas pequeña
 - Usar helm artifact
