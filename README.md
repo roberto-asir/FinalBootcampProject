@@ -36,7 +36,7 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
 - [Helm](./quiz-app-helm/README-helm.md)
 - [LA nube](./terraform-provision-gke-cluster/README-terraform.md)
 - [CI/CD](./.github/workflows/README-workflows.md)
-- Monitorizacion  [Monitorización](./terraform-provision-gke-cluster/assets/README-monitoring.md) 
+- [Monitorización](./terraform-provision-gke-cluster/assets/README-monitoring.md) 
 - Conclusiones
 - Aspectos a mejorar
 
