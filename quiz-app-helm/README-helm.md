@@ -1,4 +1,4 @@
-# ¿Porque hemos usado Helm? 
+# ¿Porque hemos usado Helm?
 
 Helm nos proporciona una forma fácil y automatizada de desplegar y actualizar aplicaciones en un cluster de Kubernetes, y al utilizarlo en conjunto con GitHub Actions podemos mejorar la eficiencia y fiabilidad de nuestros procesos de despliegue.
 
