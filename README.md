@@ -67,7 +67,10 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
   
 ## !!!!!! REVISAR CHICOS!!!!!!!!!  Lanzar proyecto (HACER un makefile que haga todos estos pasos?)
 
-  1. Descargar repo con git clone git@github.com:KeepCodingCloudDevops6/Practica-Final-Silicon-Valley.git
+  1. Descargar repo con    
+```
+git clone git@github.com:KeepCodingCloudDevops6/Practica-Final-Silicon-Valley.git
+```
   2. Crear bucket para el state.tf de terraform en gcp 
   Moverse al directorio bucket_terraform y ejecutar terraform apply y aceptar
   3. Con el bucket creado deberemos modificar el yaml terraform-provision-gke-cluster llamado bucket.tf y modificar ahí la ubicacion de nuestro bucket. Tambien se debe modificar el region y el project id que se van a utilizar en terraform.tfvars que esta ubicado en el mismo directorio
