@@ -23,7 +23,7 @@ Como grupo, nuestro objetivo en el proyecto final del bootcamp de DevOps es demo
 Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez que se realizan cambios en el código fuente, nuestro sistema detecta estos cambios y desencadena una serie de acciones para actualizar nuestra imagen de Docker, actualizar nuestro repositorio y poner en marcha todos los componentes necesarios para versionar nuestra aplicación y mantenerla funcionando. Esto nos permite tener un control más preciso y eficiente sobre nuestra aplicación, asegurando que siempre esté funcionando de manera óptima.
 
 # Diagrama General
-![diagrama-silicon-valley drawio](https://user-images.githubusercontent.com/107815913/215110664-fa57adbc-11e9-412f-a7bf-2ec7d999518e.png)
+![diagrama-silicon-valley drawio (1)](https://user-images.githubusercontent.com/107815913/215148805-c51b2888-d712-4366-9522-c8880038143a.png)
 
 # Diagrama CI/CD
 ![prsctics finsl silicon-valley drawio](https://user-images.githubusercontent.com/107815913/215132972-4ba5e6ba-8c73-42f0-8b3a-12b63e8a8a99.png)
