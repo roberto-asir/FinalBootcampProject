@@ -25,8 +25,7 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
 # Diagrama General
 ![diagrama-silicon-valley drawio (1)](https://user-images.githubusercontent.com/107815913/215150296-a371314c-338e-423d-81a2-76212735b3c6.png)
 
-# Diagrama CI/CD
-![prsctics finsl silicon-valley drawio](https://user-images.githubusercontent.com/107815913/215132972-4ba5e6ba-8c73-42f0-8b3a-12b63e8a8a99.png)
+
 # Indice
 
 - Requisitos previos
@@ -71,10 +70,23 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
 ```
 git clone git@github.com:KeepCodingCloudDevops6/Practica-Final-Silicon-Valley.git
 ```
-  2. Crear bucket para el state.tf de terraform en gcp 
-  Moverse al directorio bucket_terraform y ejecutar terraform apply y aceptar
-  3. Con el bucket creado deberemos modificar el yaml terraform-provision-gke-cluster llamado bucket.tf y modificar ahí la ubicacion de nuestro bucket. Tambien se debe modificar el region y el project id que se van a utilizar en terraform.tfvars que esta ubicado en el mismo directorio
-  4. Al modificar nuestro bucket se lanzara automaticamente nuestro cluster pues asi esta configurado nuestro workflow de infraestructura gke-cluster.yaml
+  2. Crear bucket para el state de terraform en gcp 
+     * Moverse al directorio bucket_terraform y ejecutar:     
+```
+ terraform apply -auto-approve
+```
+  3. Con el bucket creado deberemos modificaren el directorio terraform-provision-gke-cluster, el yaml llamado bucket.tf
+  
+  ![Captura desde 2023-01-27 18-24-57](https://user-images.githubusercontent.com/107815913/215153849-5eea1fc3-e793-4b61-b58a-8c07e3b675e7.png)   
+  
+  y modificar ahí la ubicacion de nuestro bucket. Tambien se debe modificar el region y el project id que se van a utilizar en terraform.tfvars que esta ubicado en el mismo directorio.
+  
+  ![Captura desde 2023-01-27 18-31-02](https://user-images.githubusercontent.com/107815913/215154691-bd66df3e-2f19-4368-8b08-1ac11bfbb896.png)
+  
+  4. Como se aprecia en el siguiente diagrama correspondiente al flujo de nuestros workflows, al modificar nuestros archivos terraform ubicados en el directorio terraform-provision-gke-cluster, se lanzará automaticamente nuestro cluster. 
+
+
+![prsctics finsl silicon-valley drawio](https://user-images.githubusercontent.com/107815913/215132972-4ba5e6ba-8c73-42f0-8b3a-12b63e8a8a99.png)
   
 
 ## Conclusiones:
