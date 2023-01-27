@@ -1,16 +1,14 @@
 ![TF](https://img.shields.io/badge/Supports%20Terraform%20Version-%3E%3D1.3.4-blue.svg) [![APP DEPLOY](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/app-deploy.yaml/badge.svg)](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/app-deploy.yaml)
 [![GKE cluster](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/gke-cluster.yaml/badge.svg)](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/gke-cluster.yaml) [![release-build](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/versioning-app.yaml/badge.svg)](https://github.com/KeepCodingCloudDevops6/Practica-Final-Silicon-Valley/actions/workflows/versioning-app.yaml)
 # Practica-Final-Silicon-Valley
-![keepcoding](https://user-images.githubusercontent.com/107815913/214015974-a306ba44-3ae4-4840-a334-b8e5bcf311fd.png)
+<img src="https://user-images.githubusercontent.com/107815913/214015974-a306ba44-3ae4-4840-a334-b8e5bcf311fd.png" width="300">
 
 # Ponentes
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/JuanMaTB)  Juan Manuel Torrado
 
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/carlosfeufernandez)  Carlos Feu 
-
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/roberto-asir)  Roberto Pérez
-
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/jacano1986)  Juan Antonio Cano
+| | |
+| ------------- | ------------- |
+| [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/JuanMaTB)  Juan Manuel Torrado | [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/carlosfeufernandez)  Carlos Feu |
+| [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/roberto-asir)  Roberto Pérez | [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/jacano1986)  Juan Antonio Cano |
 
 # Agradecimientos
 
@@ -95,17 +93,19 @@ En este proyecto hemos logrado:
 
   * Crear una imagen de Docker a partir de una aplicación al azar y utilizarla junto con los manifiestos de Kubernetes para convertirlos en charts de Helm.
   * Desplegar un cluster de Kubernetes en GCP utilizando Terraform, lo que nos permite tener una infraestructura escalable y confiable.
-  * Utilizar Github Actions para automatizar el despliegue de la aplicación y la infraestructura, lo que agiliza el proceso de desarrollo y mejora la eficiencia.
-  * Crear un sistema de monitorización con Grafana y Prometheus, lo que nos permite tener una visibilidad en tiempo real del rendimiento de nuestra aplicación.
-  * Realizar una *semantic release*  que actualiza automáticamente la imagen en Dockerhub, el archivo de valores de Helm y vuelve a lanzar el despliegue, lo que garantiza una mayor estabilidad y seguridad en nuestra aplicación.
+  * Utilizar Github Actions para automatizar el despliegue de la aplicación y el entorno necesario incluyendo la infraestructura y software adicional requerido, lo que agiliza el proceso de desarrollo y mejora la eficiencia.
+  * Desplegar un sistema de monitorización con Grafana y Prometheus, que permite tener una visibilidad en tiempo real del rendimiento de nuestra aplicación.
+  * Realizar una *semantic release*  que actualiza automáticamente la imagen en Dockerhub y la versión de la imagen a desplegar desde Helm. Una vez hechas estas modificaciones vuelve a lanzar el despliegue del chart de helm, lo que garantiza una mayor estabilidad y seguridad en nuestra aplicación.
   
-En general, este proyecto demuestra ser altamente eficaz en el uso de herramientas DevOps para mejorar la velocidad, calidad y escalabilidad de  aplicaciones.
+En general, con este proyecto:
+- hemos podido poner en práctica y afianzar los conocimientos adquiridos en el bootcamp. 
+- Nos hemos enfrentado a un proyecto completo desde cero creando un entorno de trabajo que sigue los preceptos de la filosofía DevOps con el fin de  asegurar la velocidad, calidad y escalabilidad de aplicaciones.
+
 
 ## Aspectos a mejorar 
 
-- Reducir gasto computacional, nuestra imagen podria ser mas pequeña
-- Usar helm artifact
-- Modificar todos los values para optimizar nuestros charts
-- implementar una estrategia de despliegue con istio y canary
-- 
-- 
+- A pesar de que se utiliza una imagen base ya optimizada de python habría que revisar periódicamente en busca de métodos de optimización de la imagen.
+- Modificar el chart de helm para añadir configurabilidad a los despliegues con nuestro chart.
+- Implementar una estrategia de despliegue canary completamente automatizada en base a parámetros de control necesarios para asegurar el correcto funionamiento de la nueva versión. Posible standup con Istio + Argo CD + Flagger
+- La aplicación creada no tenía test por lo que a la hora de generar la imagen no se hacen test de covertura ni unitarios. Este sería un punto crítico y urgente en un entorno laboral con un departamento de desarrollo propio.
+
