@@ -7,8 +7,8 @@ on:
   #     - main
   push:
     paths:
-    - '!*.md'
     - 'quiz-app-helm/**'
+    - '!*.md'
     branches:
       - main
   workflow_run:
