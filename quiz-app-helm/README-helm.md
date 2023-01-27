@@ -10,7 +10,7 @@ Hemos utilizado Helm debido a su facilidad de integración con los workflows de 
 
 Helm nos permite definir una configuración de aplicación en un archivo de configuración (llamado Chart) y utilizar ese archivo para instalar o actualizar la aplicación en el cluster de Kubernetes. 
 Hemos tratado de implementar una metodología ágil en nuestro despliegue, y queriamos una versión funcional lo antes posible. Debido a esto, y premeditadamente, tenemos en cuenta que modificar los values de nuestro Helm es una deuda técnica.
-No obstante, aunque en este caso particular no hayamos modificado ningún value, estamos aprovechando de las ventajas de Helm de manera más básica. Esto nos permite ahorrar tiempo y esfuerzo en el proceso de despliegue de nuestras aplicaciones en Kubernetes, y su integración con GitHub Actions es una herramienta adicional para facilitar aún más el proceso y seguir una metodología ágil.
+No obstante, hemos modificado un value, concretamente *"appVersion:"*. Este Value es fundamental para el despliegue de nuestra imagen, pues lanza nuestro Helm cada vez que se cambia la version cada vez que se modifica este valor con el workflow de semantic release. Por otro lado y volviendo a los values que no han sido modificados, aprovechamos las ventajas de Helm de una manera más básica. Esto nos permite ahorrar tiempo y esfuerzo en el proceso de despliegue de nuestras aplicaciones en Kubernetes, y su integración con GitHub Actions es una herramienta adicional para facilitar aún más el proceso y seguir una metodología ágil.
 
 # A continuación...
 
