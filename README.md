@@ -28,15 +28,15 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
 # Indice
 
 - Requisitos previos
+- Hacer funcionar nuestro proyecto
 - [La aplicación](./quiz-app/quiz-app-Readme.md)
   - [README de la aplicación](./quiz-app/README.md)
 - [Docker](./quiz-app/README-docker.md)
 - [Kubernetes](./k8s-app/README-kubernetes.md)
-- Helmetizado
-- La nube
-  - Infraestructura
-- CI/CD
-- Monitorizacion
+- [Helm](./quiz-app-helm/README-helm.md)
+- [LA nube](./terraform-provision-gke-cluster/README-terraform.md)
+- [CI/CD](./.github/workflows/README-workflows.md)
+- Monitorizacion  [Monitorización](./terraform-provision-gke-cluster/assets/README-monitoring.md) 
 - Conclusiones
 - Aspectos a mejorar
 
@@ -45,45 +45,22 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
 
 ## Requisitos previos
 
--  gitclone a este repo
--  instalados los siguientes recursos
+ -  instalados los siguientes recursos
   - docker 
   - git si vas a hacer un gitclone
   - cuenta de gcp
   - cuenta de github 
   - cuenta de dockerhub
   
+## Conclusiones:
 
+En este proyecto hemos logrado:
 
-
-En estos momentos está hecho:
-
-- Dockerización de la app
-- Manifiestos de la app
-- Script en bash que despliega los manifiestos con kubectl
-- terraform que crea bucket para almacenar el estado remoto de Terraform
-- Terraform que crea el cluster en GKE
-- CICD
-  - Se construye una imagen docker y se sube al repositorio de de docker hub y a se añade como package en github.
-  - Versioning de la aplicacion
-  - Se actualiza la imagen desplegada en kubernetes
+  *Crear una imagen de Docker a partir de una aplicación al azar y utilizarla junto con los manifiestos de Kubernetes para convertirlos en charts de Helm.
+  *Desplegar un cluster de Kubernetes en GCP utilizando Terraform, lo que nos permite tener una infraestructura escalable y confiable.
+  *Utilizar Github Actions para automatizar el despliegue de la aplicación y la infraestructura, lo que agiliza el proceso de desarrollo y mejora la eficiencia.
+  *Crear un sistema de monitorización con Grafana y Prometheus, lo que nos permite tener una visibilidad en tiempo real del rendimiento de nuestra aplicación.
+  *Realizar una liberación semántica que actualiza automáticamente la imagen en Dockerhub, el archivo de valores de Helm y vuelve a lanzar el despliegue, lo que garantiza una mayor estabilidad y seguridad en nuestra aplicación.
   
+En general, este proyecto demuestra ser altamente eficaz en el uso de herramientas DevOps para mejorar la velocidad, calidad y escalabilidad de  aplicaciones.
 
-
-Observaciones:
-- Es necesario crear el bucket con el estado remoto antes de ejecutar el terraform que crea el cluster, si no dará error al no poder crear ni encontrar el estado de Terraform
-- En estos momentos Terraform funciona por la configuación del entorno. Hay que configurarlo correctamente en el equipo que lo ejecuta. Para CICD habría que revisar cómo configurarlo (entiendo que con secrets y variables en Terraform)
-
-
-Pendiente:
-
-
-- Monitorización:
-  - Empezando con algo básico, ya habrá tiempo de ampliarlo
-
-- Para cuando todo funcione:
-  - SSL
-  - Configurarlo todo con un dominio
-  - Estrategias de nuevos deployments
-  - heml charts y adaptar los CICD para usarlos
-  
