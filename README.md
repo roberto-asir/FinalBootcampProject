@@ -51,7 +51,7 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
   - Terraform
   - [Cuenta de GCP](https://cloud.google.com/apigee/docs/hybrid/v1.4/precog-gcpaccount?hl=es-419)
   - [Instalar CLI GCP](https://cloud.google.com/sdk/docs/install?hl=es-419)
-  # !!!!!! REVISAR CHICOS!!!!!!!!!   [Acceso al cluster](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl?hl=es-419)
+  - [Acceso al cluster](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl?hl=es-419)
   - [Cuenta de github](https://docs.github.com/es/get-started/signing-up-for-github/signing-up-for-a-new-github-account)  
     -  [Secrets de github configurados](https://docs.github.com/es/actions/security-guides/encrypted-secrets#crear-secretos-cifrados-para-un-repositorio ) Se deben configurar los siguientes Secrets:
        * ACTIONS_STEP_DEBUG: variable de entorno que se utiliza en GitHub Actions para habilitar la salida de depuración adicional en los pasos de acción. Cuando se establece en true, se activa la salida de depuración en el paso de acción correspondiente, lo que puede ayudar a depurar problemas en los flujos de trabajo de GitHub Actions.
@@ -61,6 +61,7 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
        * GRAFANA_ADMINPASSWD: es una variable de entorno que se utiliza en GitHub Actions para especificar la contraseña de administrador de una instancia de Grafana.
        * WORKLOAD_IDENTITY: es una variable de entorno que se utiliza en GitHub Actions para especificar la identidad de una carga de trabajo en Google Cloud Platform. La identidad de la carga de trabajo es un mecanismo de seguridad que permite a un contenedor en un clúster de Kubernetes acceder a los recursos de GCP mediante el uso de una cuenta de servicio. Al establecer esta variable como un secreto de GitHub, se garantiza que la información de identidad de la carga de trabajo no se exponga en el repositorio y solo estará disponible para los pasos de acción que la necesiten.
   - [Cuenta de dockerhub](https://hub.docker.com/signup)
+  
   
 ## !!!!!! REVISAR CHICOS!!!!!!!!!  Lanzar proyecto (HACER un makefile que haga todos estos pasos?)
 
