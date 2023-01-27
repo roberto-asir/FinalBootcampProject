@@ -94,7 +94,8 @@ git clone git@github.com:KeepCodingCloudDevops6/Practica-Final-Silicon-Valley.gi
   4. Como se aprecia en el siguiente diagrama correspondiente al flujo de nuestros workflows, al modificar nuestros archivos terraform ubicados en el directorio terraform-provision-gke-cluster, se lanzará automaticamente nuestro cluster. 
 
 
-![prsctics finsl silicon-valley drawio](https://user-images.githubusercontent.com/107815913/215132972-4ba5e6ba-8c73-42f0-8b3a-12b63e8a8a99.png)
+![prsctics finsl silicon-valley drawio (1)](https://user-images.githubusercontent.com/107815913/215203921-98c65e68-c0fe-4b39-b50b-442e2b79b374.png)
+
   
 
 ## Conclusiones
