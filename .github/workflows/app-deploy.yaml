@@ -6,6 +6,8 @@ on:
   #   branches:
   #     - main
   push:
+    paths-ignore:
+    - '**/*.md'
     paths:
     - 'quiz-app-helm/**'
     branches:
