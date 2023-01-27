@@ -45,12 +45,19 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
 
 ## Requisitos previos
 
- -  instalados los siguientes recursos
+
   - docker 
-  - git si vas a hacer un gitclone
-  - cuenta de gcp
-  - cuenta de github 
-  - cuenta de dockerhub
+  - git (no es estrictamente necesario)
+  - [Crear o tener una cuenta de GCP](https://cloud.google.com/apigee/docs/hybrid/v1.4/precog-gcpaccount?hl=es-419)
+  - [Cuenta de github](https://docs.github.com/es/get-started/signing-up-for-github/signing-up-for-a-new-github-account)  
+    -  [Secrets de github configurados](https://docs.github.com/es/actions/security-guides/encrypted-secrets#crear-secretos-cifrados-para-un-repositorio ) Se deben configurar los siguientes Secrets:
+       * ACTIONS_STEP_DEBUG: variable de entorno que se utiliza en GitHub Actions para habilitar la salida de depuración adicional en los pasos de acción. Cuando se establece en true, se activa la salida de depuración en el paso de acción correspondiente, lo que puede ayudar a depurar problemas en los flujos de trabajo de GitHub Actions.
+       * DOCKER_HUB_PWD DOCKER_HUB_USERNAME: son variables de entorno que se utilizan en GitHub Actions para iniciar sesión en Docker Hub. Estas variables almacenan el nombre de usuario y la contraseña de una cuenta de Docker Hub, y se utilizan en los pasos de acción que implican el envío de imágenes de contenedor a Docker Hub. Al establecer estas variables como secretos de GitHub, se garantiza que la información de inicio de sesión no se exponga en el repositorio.
+       * GCP_SERVICE_ACCOUNT: es una variable de entorno que se utiliza en GitHub Actions para autenticar una cuenta de servicio de Google Cloud Platform (GCP). La cuenta de servicio es una entidad de seguridad que se utiliza para representar un servicio o una aplicación que accede a los recursos de GCP. Al establecer esta variable como un secreto de GitHub, se garantiza que la clave de la cuenta de servicio no se exponga en el repositorio, y solo estará disponible para los pasos de acción que la necesiten.
+       * GKE_CLUSTER_NAME: es una variable de entorno que se utiliza en GitHub Actions para especificar el nombre de un clúster de Kubernetes en Google Kubernetes Engine (GKE). El clúster de Kubernetes es un conjunto de máquinas virtuales que se utilizan para ejecutar aplicaciones en contenedores. Al establecer esta variable como un secreto de GitHub, se garantiza que el nombre del clúster no se exponga en el repositorio, y solo estará disponible para los pasos de acción que la necesiten.
+       * GRAFANA_ADMINPASSWD: es una variable de entorno que se utiliza en GitHub Actions para especificar la contraseña de administrador de una instancia de Grafana.
+       * WORKLOAD_IDENTITY: es una variable de entorno que se utiliza en GitHub Actions para especificar la identidad de una carga de trabajo en Google Cloud Platform. La identidad de la carga de trabajo es un mecanismo de seguridad que permite a un contenedor en un clúster de Kubernetes acceder a los recursos de GCP mediante el uso de una cuenta de servicio. Al establecer esta variable como un secreto de GitHub, se garantiza que la información de identidad de la carga de trabajo no se exponga en el repositorio y solo estará disponible para los pasos de acción que la necesiten.
+  - [Cuenta de dockerhub](https://hub.docker.com/signup)
   
 ## Conclusiones:
 
