@@ -46,9 +46,12 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
 ## Requisitos previos
 
 
-  - docker 
-  - git (no es estrictamente necesario)
-  - [Crear o tener una cuenta de GCP](https://cloud.google.com/apigee/docs/hybrid/v1.4/precog-gcpaccount?hl=es-419)
+  - Docker (si quieres usar tu propia imagen)
+  - Git (no es estrictamente necesario)
+  - Terraform
+  - [Cuenta de GCP](https://cloud.google.com/apigee/docs/hybrid/v1.4/precog-gcpaccount?hl=es-419)
+  - [Instalar CLI GCP](https://cloud.google.com/sdk/docs/install?hl=es-419)
+  # !!!!!! REVISAR CHICOS!!!!!!!!!   [Acceso al cluster](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl?hl=es-419)
   - [Cuenta de github](https://docs.github.com/es/get-started/signing-up-for-github/signing-up-for-a-new-github-account)  
     -  [Secrets de github configurados](https://docs.github.com/es/actions/security-guides/encrypted-secrets#crear-secretos-cifrados-para-un-repositorio ) Se deben configurar los siguientes Secrets:
        * ACTIONS_STEP_DEBUG: variable de entorno que se utiliza en GitHub Actions para habilitar la salida de depuración adicional en los pasos de acción. Cuando se establece en true, se activa la salida de depuración en el paso de acción correspondiente, lo que puede ayudar a depurar problemas en los flujos de trabajo de GitHub Actions.
@@ -59,6 +62,15 @@ Como muestra de nuestro entendimiento de lo que debe hacer un DevOps, Cada vez q
        * WORKLOAD_IDENTITY: es una variable de entorno que se utiliza en GitHub Actions para especificar la identidad de una carga de trabajo en Google Cloud Platform. La identidad de la carga de trabajo es un mecanismo de seguridad que permite a un contenedor en un clúster de Kubernetes acceder a los recursos de GCP mediante el uso de una cuenta de servicio. Al establecer esta variable como un secreto de GitHub, se garantiza que la información de identidad de la carga de trabajo no se exponga en el repositorio y solo estará disponible para los pasos de acción que la necesiten.
   - [Cuenta de dockerhub](https://hub.docker.com/signup)
   
+## !!!!!! REVISAR CHICOS!!!!!!!!!  Lanzar proyecto (HACER un makefile que haga todos estos pasos?)
+
+  1. Descargar repo con git clone git@github.com:KeepCodingCloudDevops6/Practica-Final-Silicon-Valley.git
+  2. Crear bucket para el state.tf de terraform en gcp 
+  Moverse al directorio bucket_terraform y ejecutar terraform apply y aceptar
+  3. Con el bucket creado deberemos modificar el yaml terraform-provision-gke-cluster llamado bucket.tf y modificar ahí la ubicacion de nuestro bucket. Tambien se debe modificar el region y el project id que se van a utilizar en terraform.tfvars que esta ubicado en el mismo directorio
+  4. Al modificar nuestro bucket se lanzara automaticamente nuestro cluster pues asi esta configurado nuestro workflow de infraestructura gke-cluster.yaml
+  
+
 ## Conclusiones:
 
 En este proyecto hemos logrado:
@@ -71,3 +83,11 @@ En este proyecto hemos logrado:
   
 En general, este proyecto demuestra ser altamente eficaz en el uso de herramientas DevOps para mejorar la velocidad, calidad y escalabilidad de  aplicaciones.
 
+## Mejoras
+
+- Reducir gasto computacional, nuestra imagen podria ser mas pequeña
+- Usar helm artifact
+- Modificar todos los values para optimizar nuestros charts
+- implementar una estrategia de despliegue con istio y canary
+- 
+- 
