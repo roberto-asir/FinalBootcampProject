@@ -1,6 +1,6 @@
 apiVersion: v1
 data:
-  dashboard-sv: |
+  dashboard-sv.json: |
     {
       "annotations": {
         "list": [
@@ -1690,3 +1690,6 @@ kind: ConfigMap
 metadata:
   name: dashboard-sv
   namespace: monitoring
+  labels:
+    grafana_dashboard: "1"
+    team: sv
