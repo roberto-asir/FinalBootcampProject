@@ -4,10 +4,6 @@
 
 <img src="https://user-images.githubusercontent.com/107815913/214015974-a306ba44-3ae4-4840-a334-b8e5bcf311fd.png" width="300">
 
-## Presentación
-
-https://user-images.githubusercontent.com/102614480/215329614-65837e25-953b-4e88-964c-bf3a93a0d351.mp4
-
 ## Ponentes
 
 
@@ -32,7 +28,9 @@ Partiendo de la filosofía DevOps nuestra intención es aplicar metodología Git
 
 Esto nos permite tener un control más preciso y eficiente sobre nuestra aplicación, asegurando que siempre esté funcionando de manera óptima.
 
-Con este proyecto, buscamos demostrar y afianzar nuestras habilidades para construir, monitorear y escalar infraestructura en la nube, lo cual es esencial para cualquier profesional en el campo de DevOps. 
+Con este proyecto, buscamos demostrar y afianzar nuestras habilidades para construir, monitorear y escalar infraestructura en la nube, lo cual es esencial para cualquier profesional en el campo de DevOps.
+
+https://user-images.githubusercontent.com/102614480/215329614-65837e25-953b-4e88-964c-bf3a93a0d351.mp4
 
 ## Diagrama General
 ![diagrama-silicon-valley drawio (1)](https://user-images.githubusercontent.com/107815913/215150296-a371314c-338e-423d-81a2-76212735b3c6.png)
