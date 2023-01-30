@@ -30,7 +30,7 @@ Esto nos permite tener un control más preciso y eficiente sobre nuestra aplicac
 
 Con este proyecto, buscamos demostrar y afianzar nuestras habilidades para construir, monitorear y escalar infraestructura en la nube, lo cual es esencial para cualquier profesional en el campo de DevOps.
 
-https://user-images.githubusercontent.com/102614480/215329614-65837e25-953b-4e88-964c-bf3a93a0d351.mp4
+https://user-images.githubusercontent.com/102614480/215438680-aa2cf9f9-c3a6-45f4-9d19-b80c359254a9.mp4
 
 ## Diagrama General
 ![diagrama-silicon-valley drawio (1)](https://user-images.githubusercontent.com/107815913/215150296-a371314c-338e-423d-81a2-76212735b3c6.png)
