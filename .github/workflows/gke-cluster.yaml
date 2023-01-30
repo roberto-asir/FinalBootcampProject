@@ -98,10 +98,7 @@ jobs:
         run: |
           helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
           helm repo update
-          helm -n monitoring upgrade --install prometheus prometheus-community/kube-prometheus-stack \
-            -f terraform-provision-gke-cluster/assets/custom_values_prometheus.yaml \
-            --set adminPassword=${{ secrets.GRAFANA_ADMINPASSWD }}
-            --create-namespace --wait --version 34.1.1
+          helm -n monitoring upgrade --install prometheus prometheus-community/kube-prometheus-stack -f terraform-provision-gke-cluster/assets/custom_values_prometheus.yaml --set adminPassword=${{ secrets.GRAFANA_ADMINPASSWD }} --create-namespace --wait --version 34.1.1
 
       - id: ingress-controller
         run: |
