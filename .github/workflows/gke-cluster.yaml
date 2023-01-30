@@ -128,7 +128,10 @@ jobs:
 
 
       - id: extra-operators-configuration
-        run: helm upgrade --install extra-operators-configuration config-extra-cluster-operators --wait
+        run: helm upgrade --install extra-operators-configuration config-extra-cluster-operators \
+            --set externalDnsApiToken=${{ secrets.CF_API_TOKEN }} \
+            --set externalDnsApiMail=${{ secrets.CF_API_EMAIL }} \
+            --wait
 
       - id: get-pods
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'

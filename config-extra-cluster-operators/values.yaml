@@ -1,3 +1,10 @@
+# Custom SV values
+#
+externalDnsApiMail: asdf@example.com
+externalDnsApiToken: yourCloudFlareTokenHere
+
+# End Customs SV values
+
 # Default values for config-extra-cluster-operators.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
