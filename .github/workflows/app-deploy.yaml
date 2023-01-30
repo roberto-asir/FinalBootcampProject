@@ -56,6 +56,4 @@ jobs:
         run: |
           helm upgrade --install helm-deploy-quiz-app quiz-app-helm \
             --set appReplicas=3 \
-            # --set dbReplicas=1 \
-            # --set appVersion=1.1.0 \
             --wait 
