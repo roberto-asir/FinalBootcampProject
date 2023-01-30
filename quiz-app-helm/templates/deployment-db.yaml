@@ -16,7 +16,7 @@ spec:
         requests:
           storage: 1Gi
   serviceName: "quiz-app-service"
-  replicas: 1
+  replicas: {{ .Values.dbReplicas }}
   selector:
     matchLabels:
       app: quiz-app-db
@@ -47,7 +47,7 @@ spec:
                 topologyKey: kubernetes.io/hostname
               weight: 1
       containers:
-      - image: mongo:6.0.3
+      - image: mongo:{{ .Values.dbAppVersion }}
         volumeMounts:
         - mountPath: /data/db
           name: db

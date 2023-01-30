@@ -55,9 +55,7 @@ jobs:
       - id: install-quiz-app
         run: |
           helm upgrade --install helm-deploy-quiz-app quiz-app-helm \
-            --wait \
-            # --set appReplicas=3 \
+             --set appReplicas=3 \
             # --set dbReplicas=1 \
-            # --set appVersion=1.1.0 \
-            --set externalDnsApiToken=${{ secrets.CF_API_TOKEN }} \
-            --set externalDnsApiMail=${{ secrets.CF_API_EMAIL }} 
+            # --set appVersion=1.1.0 
+            --wait 

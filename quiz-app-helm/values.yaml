@@ -1,5 +1,10 @@
 ## SVPF
 appVersion: 1.1.0
+appReplicas: 5
+
+dbAppVersion: 6.0.3
+dbReplicas: 2
+
 ## Fin SVPF
 
 # Default values for quiz-app-helm.
