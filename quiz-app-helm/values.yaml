@@ -1,11 +1,11 @@
-## SVPF
+## Custom SVPF values
 appVersion: 1.1.0
 appReplicas: 5
 
 dbAppVersion: 6.0.3
 dbReplicas: 2
 
-## Fin SVPF
+## Fin Custom SVPF values
 
 # Default values for quiz-app-helm.
 # This is a YAML-formatted file.
