@@ -1,4 +1,4 @@
-# Custom SV values 
+# Custom SV values
 
 externalDnsApiMail: asdf@example.com
 externalDnsApiToken: yourCloudFlareTokenHere
