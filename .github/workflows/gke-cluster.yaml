@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'terraform-provision-gke-cluster/**'
+    - 'config-extra-cluster-operators/**'
     - '!**/*.md'
     branches:
       - main
@@ -124,6 +125,10 @@ jobs:
             --create-namespace \
             --version v1.11.0 \
             --set installCRDs=true    
+
+
+      - id: extra operators configuration
+        run: helm upgrade --install extra-operators-configuration config-extra-cluster-operators --wait
 
       - id: get-pods
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'

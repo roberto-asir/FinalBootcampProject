@@ -53,15 +53,11 @@ jobs:
         run: kubectl get pods -A
 
       - id: install-quiz-app
-      #  if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run:
-      #    helm repo add flagger https://flagger.app
-          helm upgrade --install helm-deploy-quiz-app quiz-app-helm --wait 
-      # - id: install-istio-operator
-      #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-      #   run: |
-      #     helm repo add stevehipwell https://stevehipwell.github.io/helm-charts/
-      #     helm install my-istio-operator stevehipwell/istio-operator --version 1.2.2
-      # - id: get-pods-after-bootstrap
-      #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-      #   run: kubectl get pods -A
+          helm upgrade --install helm-deploy-quiz-app quiz-app-helm \
+            --wait \
+            # --set appReplicas=3 \
+            # --set dbReplicas=1 \
+            # --set appVersion=1.1.0 \
+            --set externalDnsApiToken=${{ secrets.CF_API_TOKEN }} \
+            --set externalDnsApiMail=${{ secrets.CF_API_EMAIL }} 

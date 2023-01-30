@@ -4,6 +4,10 @@ metadata:
   creationTimestamp: null
   name: ingress-grafana
   namespace: monitoring
+  annotations:
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+    external-dns.alpha.kubernetes.io/hostname: grafana.robertoasir.com
+    external-dns.alpha.kubernetes.io/ttl: "120"
 spec:
   ingressClassName: nginx
   rules:
