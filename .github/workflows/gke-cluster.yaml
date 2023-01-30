@@ -127,7 +127,7 @@ jobs:
             --set installCRDs=true    
 
 
-      - id: extra operators configuration
+      - id: extra-operators-configuration
         run: helm upgrade --install extra-operators-configuration config-extra-cluster-operators --wait
 
       - id: get-pods
